@@ -3,101 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kejutan Khusus Untukmu ❤️</title>
+    <title>Galaxy Cantikku - Tata Surya Cinta Kita</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            background: #000;
+            color: white;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
             overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Background bintang */
+        #stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 5s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        
+        /* Nebula galaxy */
+        #nebula {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+            z-index: -1;
+            opacity: 0.7;
         }
         
         .container {
-            max-width: 800px;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
-        }
-        
-        .heart-bg {
-            position: absolute;
-            font-size: 20px;
-            color: rgba(255, 105, 180, 0.1);
-            z-index: 0;
-        }
-        
-        .header {
-            text-align: center;
-            padding: 30px 20px;
-            background: linear-gradient(to right, #ff6b9d, #ff8e53);
-            margin: -20px -20px 20px -20px;
-            border-radius: 20px 20px 0 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header h1 {
-            color: white;
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-            position: relative;
-            z-index: 2;
-        }
-        
-        .header p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.1rem;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .heart-pulse {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 150px;
-            color: rgba(255, 255, 255, 0.15);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: translate(-50%, -50%) scale(0.8); }
-            50% { transform: translate(-50%, -50%) scale(1); }
-            100% { transform: translate(-50%, -50%) scale(0.8); }
-        }
-        
-        .content {
             position: relative;
             z-index: 1;
         }
         
-        .message-box {
-            background: linear-gradient(to bottom right, #fff5f7, #ffe8ec);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
-            border-left: 5px solid #ff6b9d;
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 40px;
         }
         
-        .message-box h2 {
+        .header h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(to right, #ff6b9d, #a18cd1, #4dabf7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            font-size: 1.3rem;
+            color: #b19cd9;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        /* Tata Surya Container */
+        .solar-system-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 60px 0;
+            position: relative;
+        }
+        
+        .sun {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle at 30% 30%, #ffd700, #ff8c00, #ff4500);
+            border-radius: 50%;
+            box-shadow: 0 0 60px #ff4500, 0 0 100px rgba(255, 69, 0, 0.5);
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: sunGlow 4s infinite alternate;
+        }
+        
+        @keyframes sunGlow {
+            0% { box-shadow: 0 0 60px #ff4500, 0 0 100px rgba(255, 69, 0, 0.5); }
+            100% { box-shadow: 0 0 80px #ffd700, 0 0 120px rgba(255, 215, 0, 0.7); }
+        }
+        
+        .sun-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 0 10px #000;
+        }
+        
+        /* Orbit dan Planet */
+        .orbit {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .planet {
+            position: absolute;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s;
+        }
+        
+        .planet:hover {
+            transform: scale(1.2);
+            z-index: 100;
+        }
+        
+        /* Orbit 1 - Pacar */
+        .orbit-1 {
+            width: 300px;
+            height: 300px;
+            animation: orbit-1 20s linear infinite;
+        }
+        
+        @keyframes orbit-1 {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .planet-1 {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ff6b9d, #a18cd1);
+            top: -35px;
+            left: calc(50% - 35px);
+        }
+        
+        /* Orbit 2 - Mata */
+        .orbit-2 {
+            width: 450px;
+            height: 450px;
+            animation: orbit-2 25s linear infinite;
+        }
+        
+        @keyframes orbit-2 {
+            0% { transform: rotate(45deg); }
+            100% { transform: rotate(405deg); }
+        }
+        
+        .planet-2 {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #4dabf7, #a18cd1);
+            top: -25px;
+            left: calc(50% - 25px);
+        }
+        
+        /* Orbit 3 - Senyuman */
+        .orbit-3 {
+            width: 600px;
+            height: 600px;
+            animation: orbit-3 30s linear infinite reverse;
+        }
+        
+        @keyframes orbit-3 {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+        
+        .planet-3 {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff8e53, #ff6b9d);
+            top: -30px;
+            left: calc(50% - 30px);
+        }
+        
+        /* Orbit 4 - Hati */
+        .orbit-4 {
+            width: 750px;
+            height: 750px;
+            animation: orbit-4 35s linear infinite;
+        }
+        
+        @keyframes orbit-4 {
+            0% { transform: rotate(90deg); }
+            100% { transform: rotate(450deg); }
+        }
+        
+        .planet-4 {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #a18cd1, #4dabf7);
+            top: -27.5px;
+            left: calc(50% - 27.5px);
+        }
+        
+        .planet i {
+            font-size: 1.5rem;
+        }
+        
+        /* Pesan Romantis */
+        .romantic-messages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .message-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .message-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 107, 157, 0.5);
+        }
+        
+        .message-card h3 {
+            font-size: 1.8rem;
             color: #ff6b9d;
             margin-bottom: 15px;
             display: flex;
@@ -105,580 +270,628 @@
             gap: 10px;
         }
         
-        .message-box p {
-            line-height: 1.6;
-            color: #555;
-            font-size: 1.05rem;
+        .message-card p {
+            line-height: 1.7;
+            color: #ccc;
+            font-size: 1.1rem;
         }
         
-        .photo-frame {
-            background-color: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 25px;
+        /* Foto Section */
+        .photo-section {
             text-align: center;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+            margin: 60px 0;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
         
-        .photo-frame h3 {
-            color: #ff6b9d;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
+        .photo-section h2 {
+            font-size: 2.5rem;
+            color: #a18cd1;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(161, 140, 209, 0.5);
         }
         
         .photo-container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .photo-preview {
-            width: 200px;
-            height: 200px;
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 30px;
             border-radius: 50%;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border: 5px solid transparent;
+            background: linear-gradient(45deg, #ff6b9d, #4dabf7, #a18cd1);
+            background-size: 300% 300%;
+            animation: gradient-border 4s ease infinite;
+            box-shadow: 0 0 40px rgba(255, 107, 157, 0.3);
             position: relative;
-            border: 5px solid white;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
         }
         
-        .photo-preview img {
+        @keyframes gradient-border {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        
+        .photo-placeholder i {
+            font-size: 80px;
+            color: #a18cd1;
+            margin-bottom: 15px;
+        }
+        
+        #photoPreview {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: none;
         }
         
-        .photo-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 80px;
-            color: white;
-        }
-        
-        .upload-section {
-            width: 100%;
-            max-width: 300px;
-        }
-        
         .upload-btn {
             display: inline-block;
-            background: linear-gradient(to right, #ff6b9d, #ff8e53);
+            background: linear-gradient(to right, #ff6b9d, #a18cd1);
             color: white;
-            padding: 12px 25px;
+            padding: 15px 30px;
             border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
             cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+            transition: all 0.3s;
             border: none;
-            width: 100%;
-            text-align: center;
+            margin-top: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         
         .upload-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
-        }
-        
-        .upload-btn i {
-            margin-right: 8px;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
         }
         
         #fileInput {
             display: none;
         }
         
-        .photo-instruction {
-            margin-top: 10px;
-            color: #777;
-            font-size: 0.9rem;
+        /* Surprise Section */
+        .surprise-section {
             text-align: center;
+            margin: 80px 0;
+            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
         }
         
-        .memory-box {
-            background: linear-gradient(to bottom right, #f0f9ff, #e6f7ff);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
-            border-left: 5px solid #4dabf7;
-        }
-        
-        .memory-box h2 {
-            color: #4dabf7;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .memory-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            padding: 10px;
-            background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 10px;
-        }
-        
-        .memory-icon {
-            width: 40px;
-            height: 40px;
-            background-color: #4dabf7;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 15px;
-            color: white;
-            flex-shrink: 0;
-        }
-        
-        .memory-text {
-            color: #555;
-            font-size: 1rem;
-        }
-        
-        .surprise-button {
-            display: block;
+        .surprise-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            background: linear-gradient(to right, #ff6b9d, #ff8e53);
+            height: 5px;
+            background: linear-gradient(to right, #ff6b9d, #4dabf7, #a18cd1);
+        }
+        
+        .surprise-section h2 {
+            font-size: 2.8rem;
+            color: #ffd700;
+            margin-bottom: 30px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        
+        .surprise-btn {
+            background: linear-gradient(45deg, #ff6b9d, #ff8e53);
             color: white;
             border: none;
-            padding: 18px;
-            font-size: 1.3rem;
-            border-radius: 12px;
+            padding: 20px 50px;
+            font-size: 1.5rem;
+            border-radius: 50px;
             cursor: pointer;
-            margin: 25px 0;
-            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
-            transition: all 0.3s ease;
+            transition: all 0.3s;
+            box-shadow: 0 15px 30px rgba(255, 107, 157, 0.3);
             font-weight: bold;
             letter-spacing: 1px;
+            margin-top: 20px;
         }
         
-        .surprise-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(255, 107, 157, 0.5);
-        }
-        
-        .surprise-button:active {
-            transform: translateY(-2px);
+        .surprise-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 107, 157, 0.5);
         }
         
         .hidden-surprise {
             display: none;
-            text-align: center;
-            padding: 30px;
-            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
-            border-radius: 15px;
-            margin-top: 25px;
+            margin-top: 50px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
             animation: fadeIn 1s ease;
         }
         
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
-        .hidden-surprise h2 {
-            color: white;
-            font-size: 2rem;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-        
-        .hidden-surprise p {
-            color: rgba(255, 255, 255, 0.95);
-            font-size: 1.2rem;
-            line-height: 1.6;
+        .hidden-surprise h3 {
+            font-size: 2.2rem;
+            color: #ffd700;
             margin-bottom: 20px;
         }
         
-        .love-letter {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: left;
-            margin-top: 20px;
-            border-left: 5px solid #a18cd1;
+        .hidden-surprise p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
-        .love-letter p {
-            color: #555;
-            font-style: italic;
-            line-height: 1.6;
-        }
-        
-        .footer {
-            text-align: center;
-            padding: 20px;
-            color: #777;
-            font-size: 0.9rem;
-            border-top: 1px solid #eee;
-            margin-top: 20px;
-        }
-        
-        .floating-hearts {
+        /* Komet */
+        .comet {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
+            width: 5px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 20px white;
             z-index: -1;
         }
         
-        .floating-heart {
+        .comet-tail {
             position: absolute;
-            font-size: 24px;
-            color: rgba(255, 105, 180, 0.5);
-            animation: float 5s infinite ease-in-out;
+            height: 1px;
+            background: linear-gradient(to right, transparent, white);
+            transform-origin: left center;
         }
         
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); }
-            100% { transform: translateY(-100px) rotate(360deg); }
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #888;
+            font-size: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 60px;
         }
         
-        /* Styling untuk foto tambahan */
-        .extra-photos {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 20px;
+        .footer p {
+            margin-bottom: 10px;
         }
         
-        .small-photo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            border: 3px solid white;
-        }
-        
-        .small-photo:hover {
-            transform: scale(1.1);
-        }
-        
-        .small-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        /* Responsive untuk HP */
-        @media (max-width: 600px) {
+        /* Responsive Design */
+        @media (max-width: 768px) {
             .header h1 {
-                font-size: 1.8rem;
+                font-size: 2.5rem;
             }
             
-            .header p {
-                font-size: 1rem;
+            .orbit-4 {
+                width: 500px;
+                height: 500px;
             }
             
-            .heart-pulse {
-                font-size: 100px;
+            .orbit-3 {
+                width: 400px;
+                height: 400px;
             }
             
-            .message-box, .memory-box, .photo-frame {
-                padding: 20px;
+            .orbit-2 {
+                width: 300px;
+                height: 300px;
             }
             
-            .photo-preview {
-                width: 180px;
-                height: 180px;
+            .orbit-1 {
+                width: 200px;
+                height: 200px;
             }
             
-            .photo-placeholder {
-                font-size: 60px;
+            .sun {
+                width: 100px;
+                height: 100px;
             }
             
-            .surprise-button {
-                padding: 16px;
-                font-size: 1.2rem;
-            }
-            
-            .hidden-surprise h2 {
-                font-size: 1.7rem;
-            }
-            
-            .hidden-surprise p {
-                font-size: 1.1rem;
-            }
-            
-            .small-photo {
-                width: 70px;
-                height: 70px;
-            }
-        }
-        
-        @media (max-width: 400px) {
-            .header h1 {
-                font-size: 1.5rem;
-            }
-            
-            .message-box h2, .memory-box h2 {
-                font-size: 1.3rem;
-            }
-            
-            .photo-preview {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .photo-placeholder {
-                font-size: 50px;
-            }
-            
-            .small-photo {
+            .planet-1 {
                 width: 60px;
                 height: 60px;
+                top: -30px;
+                left: calc(50% - 30px);
+            }
+            
+            .planet-2 {
+                width: 40px;
+                height: 40px;
+                top: -20px;
+                left: calc(50% - 20px);
+            }
+            
+            .planet-3 {
+                width: 50px;
+                height: 50px;
+                top: -25px;
+                left: calc(50% - 25px);
+            }
+            
+            .planet-4 {
+                width: 45px;
+                height: 45px;
+                top: -22.5px;
+                left: calc(50% - 22.5px);
+            }
+            
+            .romantic-messages {
+                grid-template-columns: 1fr;
+            }
+            
+            .surprise-section h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .orbit-4 {
+                width: 350px;
+                height: 350px;
+            }
+            
+            .orbit-3 {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .orbit-2 {
+                width: 210px;
+                height: 210px;
+            }
+            
+            .orbit-1 {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .photo-container {
+                width: 200px;
+                height: 200px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="floating-hearts" id="floatingHearts"></div>
+    <!-- Background Bintang -->
+    <div id="stars"></div>
+    <div id="nebula"></div>
+    
+    <!-- Komet -->
+    <div id="comets"></div>
     
     <div class="container">
         <div class="header">
-            <div class="heart-pulse"><i class="fas fa-heart"></i></div>
-            <h1>Untuk Cintaku Tersayang ❤️</h1>
-            <p>Sebuah kejutan kecil yang dibuat khusus untukmu</p>
+            <h1><i class="fas fa-star"></i> PEREMPUAN CANTIKKU <i class="fas fa-star"></i></h1>
+            <p>Kecantikanmu seperti galaksi tak terhingga, dengan mata yang bersinar bagai bintang dan senyuman yang hangat seperti matahari</p>
         </div>
         
-        <div class="content">
-            <div class="message-box">
-                <h2><i class="fas fa-heart"></i> Pesan Khusus</h2>
-                <p>Sayang, aku membuat website ini khusus untukmu karena kamu adalah orang yang sangat spesial dalam hidupku. Setiap hari bersamamu adalah anugerah yang tak ternilai. Aku ingin kamu tahu betapa berartinya kamu bagiku.</p>
-                <p>Terima kasih sudah selalu ada, sudah mendukungku, dan sudah membuat hidupku lebih berwarna. Aku bersyukur setiap hari karena memiliki seseorang sepertimu.</p>
+        <!-- Tata Surya Animasi -->
+        <div class="solar-system-container">
+            <div class="sun">
+                <div class="sun-text">CANTIK<br>BAGAI<br>MATAHARI</div>
             </div>
             
-            <div class="photo-frame">
-                <h3>Foto Cantik Kamu ❤️</h3>
-                <div class="photo-container">
-                    <div class="photo-preview" id="photoPreview">
-                        <div class="photo-placeholder" id="photoPlaceholder">
-                            <i class="fas fa-user-heart"></i>
-                        </div>
-                        <img id="previewImage" src="" alt="Foto Pacar">
-                    </div>
-                    
-                    <div class="upload-section">
-                        <label for="fileInput" class="upload-btn">
-                            <i class="fas fa-cloud-upload-alt"></i> UPLOAD FOTO
-                        </label>
-                        <input type="file" id="fileInput" accept="image/*">
-                        <p class="photo-instruction">Klik untuk upload foto kamu yang paling cantik</p>
-                    </div>
-                </div>
-                
-                <div class="extra-photos" id="extraPhotos">
-                    <!-- Foto tambahan akan ditambahkan di sini -->
+            <!-- Orbit dan Planet -->
+            <div class="orbit orbit-1">
+                <div class="planet planet-1">
+                    <i class="fas fa-female"></i>
                 </div>
             </div>
             
-            <div class="memory-box">
-                <h2><i class="fas fa-star"></i> Kenangan Manis Kita</h2>
-                
-                <div class="memory-item">
-                    <div class="memory-icon">
-                        <i class="fas fa-calendar-day"></i>
-                    </div>
-                    <div class="memory-text">Pertama kali kita bertemu dan aku langsung terpesona</div>
-                </div>
-                
-                <div class="memory-item">
-                    <div class="memory-icon">
-                        <i class="fas fa-film"></i>
-                    </div>
-                    <div class="memory-text">Date pertama kita yang awkward tapi lucu</div>
-                </div>
-                
-                <div class="memory-item">
-                    <div class="memory-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <div class="memory-text">Momen saat kamu mencoba masakanku untuk pertama kali</div>
-                </div>
-                
-                <div class="memory-item">
-                    <div class="memory-icon">
-                        <i class="fas fa-laugh-beam"></i>
-                    </div>
-                    <div class="memory-text">Setiap tawa dan canda yang kita bagi bersama</div>
+            <div class="orbit orbit-2">
+                <div class="planet planet-2">
+                    <i class="fas fa-eye"></i>
                 </div>
             </div>
             
-            <button class="surprise-button" id="surpriseBtn">
-                <i class="fas fa-gift"></i> KLIK UNTUK KEJUTAN SPESIAL!
-            </button>
+            <div class="orbit orbit-3">
+                <div class="planet planet-3">
+                    <i class="fas fa-smile"></i>
+                </div>
+            </div>
             
-            <div class="hidden-surprise" id="hiddenSurprise">
-                <h2>AKU MENCINTAIMU! ❤️</h2>
-                <p>Ini adalah website kejutan kecil yang kubuat untuk menunjukkan betapa spesialnya kamu bagiku.</p>
-                <p>Setiap momen bersamamu adalah kenangan indah yang akan selalu kusimpan dalam hatiku.</p>
-                
-                <div class="love-letter">
-                    <p>Sayangku,<br><br>
-                    Terima kasih telah menjadi cahaya dalam hidupku. Aku tidak bisa membayangkan hidup tanpamu. Kamu membuatku menjadi pribadi yang lebih baik setiap harinya.<br><br>
-                    Aku berjanji akan selalu menyayangimu, menghargaimu, dan membuatmu tersenyum setiap hari. Kamu adalah orang terhebat yang pernah aku temui.<br><br>
-                    Selalu milikmu,<br>
-                    <strong>Yang selalu mencintaimu</strong></p>
-                </div>
-                
-                <!-- Foto yang sudah diupload akan muncul di sini juga -->
-                <div id="surprisePhoto" style="margin: 25px 0; display: none;">
-                    <div style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; margin: 0 auto; box-shadow: 0 10px 20px rgba(0,0,0,0.2); border: 5px solid white;">
-                        <img id="surprisePhotoImg" src="" alt="Foto Cantikmu" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <p style="color: white; margin-top: 10px;">Foto cantikmu yang baru saja diupload ❤️</p>
-                </div>
-                
-                <div style="margin-top: 25px; font-size: 60px; color: white;">
+            <div class="orbit orbit-4">
+                <div class="planet planet-4">
                     <i class="fas fa-heart"></i>
                 </div>
             </div>
-            
-            <div class="footer">
-                <p>Dibuat dengan <i class="fas fa-heart" style="color: #ff6b9d;"></i> hanya untukmu | Hari ini dan selamanya</p>
+        </div>
+        
+        <!-- Pesan Romantis -->
+        <div class="romantic-messages">
+            <div class="message-card">
+                <h3><i class="fas fa-star"></i> Bagaikan Bintang</h3>
+                <p>Kecantikanmu bagaikan bintang di langit malam, bersinar terang menerangi kegelapan hidupku. Setiap kali memandangmu, aku melihat keindahan tak terbatas yang membuatku takjub.</p>
             </div>
+            
+            <div class="message-card">
+                <h3><i class="fas fa-moon"></i> Lembut Seperti Bulan</h3>
+                <p>Senyumanmu yang lembut seperti cahaya bulan, meneduhkan dan menenangkan. Kehadiranmu memberikan kedamaian dalam setiap helaan nafasku.</p>
+            </div>
+            
+            <div class="message-card">
+                <h3><i class="fas fa-sun"></i> Hangat Seperti Matahari</h3>
+                <p>Kasih sayangmu hangat seperti matahari, menghangatkan hati yang dingin. Denganmu, setiap hari terasa cerah dan penuh harapan baru.</p>
+            </div>
+        </div>
+        
+        <!-- Foto Section -->
+        <div class="photo-section">
+            <h2><i class="fas fa-camera"></i> GALAXY CANTIKMU</h2>
+            <div class="photo-container">
+                <div class="photo-placeholder" id="photoPlaceholder">
+                    <i class="fas fa-user-astronaut"></i>
+                    <p>Foto Cantikmu Akan Muncul Di Sini</p>
+                </div>
+                <img id="photoPreview" src="" alt="Foto Cantikmu">
+            </div>
+            
+            <label for="fileInput" class="upload-btn">
+                <i class="fas fa-upload"></i> UPLOAD FOTO CANTIKMU
+            </label>
+            <input type="file" id="fileInput" accept="image/*">
+            <p style="margin-top: 15px; color: #a18cd1; font-size: 0.9rem;">Upload foto terbaikmu untuk melihat kecantikanmu bersinar di galaksi ini</p>
+        </div>
+        
+        <!-- Surprise Section -->
+        <div class="surprise-section">
+            <h2><i class="fas fa-gift"></i> KEJUTAN GALAXY</h2>
+            <p style="font-size: 1.2rem; color: #ccc; max-width: 800px; margin: 0 auto 30px;">
+                Tekan tombol di bawah untuk mendapatkan kejutan galaksi yang spesial untukmu
+            </p>
+            
+            <button class="surprise-btn" id="surpriseBtn">
+                <i class="fas fa-rocket"></i> BUKA KEJUTAN SPESIAL
+            </button>
+            
+            <div class="hidden-surprise" id="hiddenSurprise">
+                <h3>KAMU ADALAH ALAM SEMESTAKU! <i class="fas fa-heart"></i></h3>
+                <p>
+                    Di galaksi yang luas ini, hanya ada satu bintang yang bersinar paling terang: <strong>KAMU</strong>. 
+                    Kecantikanmu bukan hanya fisik, tetapi juga cahaya jiwamu yang menerangi sekitarmu.
+                </p>
+                <p style="margin-top: 20px;">
+                    <i class="fas fa-quote-left" style="color: #ff6b9d; margin-right: 10px;"></i>
+                    Jika kecantikan adalah galaksi, maka kamu adalah pusat tata surya yang membuat semua planet berputar mengelilingimu.
+                    Kamu adalah misteri alam semesta yang ingin selalu kueksplorasi seumur hidupku.
+                    <i class="fas fa-quote-right" style="color: #ff6b9d; margin-left: 10px;"></i>
+                </p>
+                <div style="margin-top: 30px; font-size: 3rem; color: #ffd700;">
+                    <i class="fas fa-heart"></i> <i class="fas fa-star"></i> <i class="fas fa-heart"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Dibuat dengan <i class="fas fa-heart" style="color: #ff6b9d;"></i> oleh seorang lelaki yang terkagum-kagum apa yang ada pada dirimu sayangg</p>
+            <p>© Perempuan Cantikku - Kecantikan Abadi Seperti Bintang</p>
         </div>
     </div>
 
     <script>
-        // Array untuk menyimpan foto-foto yang diupload
-        let uploadedPhotos = [];
-        
-        // Membuat hati bertebaran di latar belakang
-        function createFloatingHearts() {
-            const floatingHearts = document.getElementById('floatingHearts');
-            const heartCount = 30;
+        // Membuat bintang di background
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 200;
             
-            for (let i = 0; i < heartCount; i++) {
-                const heart = document.createElement('div');
-                heart.classList.add('floating-heart');
-                heart.innerHTML = '<i class="fas fa-heart"></i>';
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Ukuran acak
+                const size = Math.random() * 3 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
                 
                 // Posisi acak
-                const leftPos = Math.random() * 100;
-                const animationDuration = 5 + Math.random() * 10;
-                const animationDelay = Math.random() * 5;
-                const fontSize = 15 + Math.random() * 25;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
                 
-                heart.style.left = `${leftPos}%`;
-                heart.style.animationDuration = `${animationDuration}s`;
-                heart.style.animationDelay = `${animationDelay}s`;
-                heart.style.fontSize = `${fontSize}px`;
-                heart.style.opacity = 0.2 + Math.random() * 0.5;
+                // Animasi acak
+                const duration = Math.random() * 5 + 3;
+                const delay = Math.random() * 5;
+                star.style.animationDuration = `${duration}s`;
+                star.style.animationDelay = `${delay}s`;
                 
-                floatingHearts.appendChild(heart);
+                starsContainer.appendChild(star);
             }
         }
         
-        // Fungsi untuk menampilkan foto yang diupload
-        function displayUploadedPhoto(file) {
-            const reader = new FileReader();
+        // Membuat komet
+        function createComets() {
+            const cometsContainer = document.getElementById('comets');
+            const cometCount = 5;
             
-            reader.onload = function(e) {
-                const previewImage = document.getElementById('previewImage');
-                const photoPlaceholder = document.getElementById('photoPlaceholder');
-                const surprisePhotoImg = document.getElementById('surprisePhotoImg');
-                const surprisePhoto = document.getElementById('surprisePhoto');
+            for (let i = 0; i < cometCount; i++) {
+                const comet = document.createElement('div');
+                comet.classList.add('comet');
                 
-                // Simpan foto ke array
-                uploadedPhotos.push(e.target.result);
+                // Posisi awal acak
+                const startX = Math.random() * 100;
+                const startY = Math.random() * 100;
                 
-                // Tampilkan foto di preview utama
-                previewImage.src = e.target.result;
-                previewImage.style.display = 'block';
-                photoPlaceholder.style.display = 'none';
+                comet.style.left = `${startX}%`;
+                comet.style.top = `${startY}%`;
                 
-                // Tampilkan juga di bagian kejutan
-                surprisePhotoImg.src = e.target.result;
-                surprisePhoto.style.display = 'block';
+                // Warna acak
+                const colors = ['#4dabf7', '#a18cd1', '#ff6b9d', '#ffd700'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                comet.style.background = color;
+                comet.style.boxShadow = `0 0 20px ${color}`;
                 
-                // Tambahkan foto ke galeri kecil
-                updateExtraPhotos();
+                // Membuat ekor komet
+                const tail = document.createElement('div');
+                tail.classList.add('comet-tail');
+                tail.style.width = `${Math.random() * 100 + 50}px`;
+                tail.style.background = `linear-gradient(to right, transparent, ${color})`;
                 
-                // Tampilkan pesan sukses
-                showUploadSuccess();
+                // Rotasi acak
+                const angle = Math.random() * 360;
+                tail.style.transform = `rotate(${angle}deg)`;
+                
+                comet.appendChild(tail);
+                cometsContainer.appendChild(comet);
+                
+                // Animasi komet
+                animateComet(comet, startX, startY, angle);
             }
-            
-            reader.readAsDataURL(file);
         }
         
-        // Fungsi untuk memperbarui galeri foto kecil
-        function updateExtraPhotos() {
-            const extraPhotos = document.getElementById('extraPhotos');
-            extraPhotos.innerHTML = '';
+        // Animasi pergerakan komet
+        function animateComet(comet, startX, startY, angle) {
+            let x = startX;
+            let y = startY;
+            const speed = 0.05;
+            const angleRad = angle * Math.PI / 180;
             
-            // Tambahkan semua foto yang sudah diupload
-            uploadedPhotos.forEach((photoSrc, index) => {
-                const photoDiv = document.createElement('div');
-                photoDiv.classList.add('small-photo');
-                photoDiv.innerHTML = `<img src="${photoSrc}" alt="Foto ${index + 1}">`;
+            function moveComet() {
+                x += Math.cos(angleRad) * speed;
+                y += Math.sin(angleRad) * speed;
                 
-                // Ketika foto kecil diklik, tampilkan di preview utama
-                photoDiv.addEventListener('click', function() {
-                    const previewImage = document.getElementById('previewImage');
+                comet.style.left = `${x}%`;
+                comet.style.top = `${y}%`;
+                
+                // Jika komet keluar dari layar, reset posisi
+                if (x < -5 || x > 105 || y < -5 || y > 105) {
+                    x = Math.random() * 100;
+                    y = Math.random() * 100;
+                    comet.style.left = `${x}%`;
+                    comet.style.top = `${y}%`;
+                }
+                
+                requestAnimationFrame(moveComet);
+            }
+            
+            moveComet();
+        }
+        
+        // Upload foto
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            
+            if (file) {
+                // Validasi ukuran file
+                if (file.size > 5 * 1024 * 1024) {
+                    alert('Ukuran foto terlalu besar. Maksimal 5MB.');
+                    return;
+                }
+                
+                // Validasi tipe file
+                if (!file.type.match('image.*')) {
+                    alert('Hanya file gambar yang diizinkan.');
+                    return;
+                }
+                
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    const previewImage = document.getElementById('photoPreview');
                     const photoPlaceholder = document.getElementById('photoPlaceholder');
                     
-                    previewImage.src = photoSrc;
+                    // Tampilkan foto
+                    previewImage.src = e.target.result;
                     previewImage.style.display = 'block';
                     photoPlaceholder.style.display = 'none';
-                });
+                    
+                    // Tampilkan efek bintang baru
+                    createPhotoStars();
+                    
+                    // Tampilkan notifikasi
+                    showNotification('By: Lelaki kesayanganmu!    Makin cantikk ajaa pacalkuuu nihh yaa mwahhhhh! ✨');
+                }
                 
-                extraPhotos.appendChild(photoDiv);
-            });
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        // Membuat bintang di sekitar foto
+        function createPhotoStars() {
+            const photoContainer = document.querySelector('.photo-container');
             
-            // Jika ada lebih dari 1 foto, tampilkan pesan
-            if (uploadedPhotos.length > 0) {
-                const instruction = document.querySelector('.photo-instruction');
-                instruction.innerHTML = `Klik foto kecil untuk melihat lebih besar. ${uploadedPhotos.length} foto diupload ❤️`;
+            // Hapus bintang lama jika ada
+            const oldStars = document.querySelectorAll('.photo-star');
+            oldStars.forEach(star => star.remove());
+            
+            // Buat bintang baru
+            for (let i = 0; i < 15; i++) {
+                const star = document.createElement('div');
+                star.classList.add('photo-star');
+                star.style.position = 'absolute';
+                star.style.width = `${Math.random() * 10 + 5}px`;
+                star.style.height = star.style.width;
+                star.style.background = 'white';
+                star.style.borderRadius = '50%';
+                star.style.boxShadow = '0 0 10px white';
+                
+                // Posisi acak di sekitar foto
+                const angle = Math.random() * 360;
+                const distance = 150;
+                const x = 125 + Math.cos(angle * Math.PI / 180) * distance;
+                const y = 125 + Math.sin(angle * Math.PI / 180) * distance;
+                
+                star.style.left = `${x}px`;
+                star.style.top = `${y}px`;
+                star.style.zIndex = '5';
+                
+                // Animasi berkedip
+                star.style.animation = `twinkle ${Math.random() * 3 + 2}s infinite`;
+                
+                photoContainer.appendChild(star);
             }
         }
         
-        // Fungsi untuk menampilkan pesan sukses upload
-        function showUploadSuccess() {
-            // Buat elemen pesan sukses
-            const successMsg = document.createElement('div');
-            successMsg.style.cssText = `
+        // Notifikasi
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
                 position: fixed;
                 top: 20px;
                 right: 20px;
-                background: linear-gradient(to right, #4CAF50, #8BC34A);
+                background: linear-gradient(to right, #ff6b9d, #a18cd1);
                 color: white;
-                padding: 15px 20px;
+                padding: 15px 25px;
                 border-radius: 10px;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
                 z-index: 10000;
-                animation: slideIn 0.5s ease, fadeOut 0.5s ease 2.5s;
+                animation: slideInRight 0.5s ease, fadeOut 0.5s ease 3s;
                 animation-fill-mode: forwards;
-                max-width: 300px;
+                max-width: 350px;
+                border-left: 5px solid #ffd700;
             `;
             
-            successMsg.innerHTML = `
-                <i class="fas fa-check-circle" style="margin-right: 10px;"></i>
-                <strong>Foto berhasil diupload!</strong>
-                <p style="margin-top: 5px; font-size: 0.9rem;">Kamu terlihat sangat cantik ❤️</p>
+            notification.innerHTML = `
+                <div style="display: flex; align-items: center;">
+                    <i class="fas fa-star" style="margin-right: 10px; font-size: 1.2rem;"></i>
+                    <div>
+                        <strong style="display: block; margin-bottom: 5px;">Galaxy Notification</strong>
+                        <div>${message}</div>
+                    </div>
+                </div>
             `;
             
             // Tambahkan style untuk animasi
             const style = document.createElement('style');
             style.textContent = `
-                @keyframes slideIn {
+                @keyframes slideInRight {
                     from { transform: translateX(100%); opacity: 0; }
                     to { transform: translateX(0); opacity: 1; }
                 }
@@ -689,14 +902,14 @@
             `;
             document.head.appendChild(style);
             
-            document.body.appendChild(successMsg);
+            document.body.appendChild(notification);
             
-            // Hapus pesan setelah 3 detik
+            // Hapus notifikasi setelah 3.5 detik
             setTimeout(() => {
-                if (successMsg.parentNode) {
-                    successMsg.parentNode.removeChild(successMsg);
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
                 }
-            }, 3000);
+            }, 13500);
         }
         
         // Tombol kejutan
@@ -705,199 +918,205 @@
             const button = this;
             
             // Animasi tombol
-            button.style.transform = 'scale(0.95)';
-            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> MEMUAT KEJUTAN...';
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> MEMUAT GALAXY...';
+            button.disabled = true;
             
             // Efek suara (jika diizinkan)
             try {
+                // Buat efek suara kosmik
                 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                const oscillator = audioContext.createOscillator();
-                const gainNode = audioContext.createGain();
                 
-                oscillator.connect(gainNode);
-                gainNode.connect(audioContext.destination);
-                
-                oscillator.frequency.setValueAtTime(523.25, audioContext.currentTime); // C5
-                oscillator.frequency.setValueAtTime(659.25, audioContext.currentTime + 0.1); // E5
-                oscillator.frequency.setValueAtTime(783.99, audioContext.currentTime + 0.2); // G5
-                
-                gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
-                
-                oscillator.start(audioContext.currentTime);
-                oscillator.stop(audioContext.currentTime + 0.5);
+                // Buat beberapa osilator untuk efek galaksi
+                for (let i = 0; i < 3; i++) {
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    // Frekuensi acak untuk efek kosmik
+                    const freq = 200 + Math.random() * 800;
+                    oscillator.frequency.setValueAtTime(freq, audioContext.currentTime);
+                    
+                    gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 1);
+                    
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + 1);
+                }
             } catch (e) {
                 console.log("Audio tidak didukung");
             }
+            
+            // Efek visual galaksi
+            createGalaxyExplosion();
             
             // Tampilkan kejutan setelah jeda
             setTimeout(() => {
                 surprise.style.display = 'block';
                 button.style.display = 'none';
                 
-                // Efek konfeti virtual
-                createConfetti();
-                
                 // Scroll ke kejutan
-                surprise.scrollIntoView({ behavior: 'smooth' });
-            }, 800);
+                surprise.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Tambahkan efek bintang berjatuhan
+                createFallingStars();
+            }, 1500);
         });
         
-        // Efek konfeti sederhana
-        function createConfetti() {
-            const container = document.querySelector('.container');
-            const confettiCount = 50;
+        // Efek ledakan galaksi
+        function createGalaxyExplosion() {
+            const container = document.querySelector('.surprise-section');
+            const particleCount = 50;
             
-            for (let i = 0; i < confettiCount; i++) {
-                const confetti = document.createElement('div');
-                confetti.classList.add('floating-heart');
-                confetti.innerHTML = '<i class="fas fa-heart"></i>';
-                confetti.style.color = getRandomColor();
-                confetti.style.position = 'absolute';
-                confetti.style.zIndex = '1000';
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = '10px';
+                particle.style.height = '10px';
+                particle.style.borderRadius = '50%';
+                particle.style.zIndex = '100';
                 
-                // Posisi acak di sekitar tombol
-                const leftPos = 20 + Math.random() * 60;
-                const animationDuration = 1 + Math.random() * 2;
+                // Warna acak
+                const colors = ['#ff6b9d', '#4dabf7', '#a18cd1', '#ffd700', '#ff8e53'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.background = color;
+                particle.style.boxShadow = `0 0 10px ${color}`;
                 
-                confetti.style.left = `${leftPos}%`;
-                confetti.style.top = '80%';
-                confetti.style.animationDuration = `${animationDuration}s`;
-                confetti.style.fontSize = `${15 + Math.random() * 20}px`;
+                // Posisi di tengah tombol
+                particle.style.left = '50%';
+                particle.style.top = '50%';
                 
-                container.appendChild(confetti);
+                container.appendChild(particle);
                 
-                // Hapus konfeti setelah animasi selesai
+                // Animasi partikel
+                const angle = Math.random() * 360;
+                const distance = 100 + Math.random() * 200;
+                const duration = 0.8 + Math.random() * 0.5;
+                
+                particle.animate([
+                    { transform: 'translate(-50%, -50%) scale(1)', opacity: 1 },
+                    { transform: `translate(${Math.cos(angle * Math.PI / 180) * distance}px, ${Math.sin(angle * Math.PI / 180) * distance}px) scale(0)`, opacity: 0 }
+                ], {
+                    duration: duration * 1000,
+                    easing: 'ease-out'
+                });
+                
+                // Hapus partikel setelah animasi selesai
                 setTimeout(() => {
-                    confetti.remove();
-                }, animationDuration * 1000);
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, duration * 1000);
             }
         }
         
-        function getRandomColor() {
-            const colors = ['#ff6b9d', '#ff8e53', '#4dabf7', '#a18cd1', '#69db7c'];
-            return colors[Math.floor(Math.random() * colors.length)];
+        // Efek bintang jatuh
+        function createFallingStars() {
+            const container = document.querySelector('.container');
+            const starCount = 20;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.style.position = 'fixed';
+                star.style.width = '3px';
+                star.style.height = '3px';
+                star.style.background = 'white';
+                star.style.borderRadius = '50%';
+                star.style.boxShadow = '0 0 10px white';
+                star.style.zIndex = '1000';
+                
+                // Posisi awal di atas layar
+                const startX = Math.random() * 100;
+                star.style.left = `${startX}%`;
+                star.style.top = '-10px';
+                
+                document.body.appendChild(star);
+                
+                // Animasi jatuh
+                const duration = 1 + Math.random() * 2;
+                const endX = startX + (Math.random() * 20 - 10);
+                
+                star.animate([
+                    { transform: 'translateY(0)', opacity: 1 },
+                    { transform: `translateY(100vh) translateX(${endX - startX}%)`, opacity: 0 }
+                ], {
+                    duration: duration * 1000,
+                    easing: 'cubic-bezier(0.1, 0.8, 0.2, 1)'
+                });
+                
+                // Hapus bintang setelah animasi selesai
+                setTimeout(() => {
+                    if (star.parentNode) {
+                        star.parentNode.removeChild(star);
+                    }
+                }, duration * 1000);
+            }
         }
         
         // Inisialisasi
         document.addEventListener('DOMContentLoaded', function() {
-            createFloatingHearts();
+            createStars();
+            createComets();
             
-            // Tambahkan beberapa hati di latar belakang container
-            const container = document.querySelector('.container');
-            for (let i = 0; i < 15; i++) {
-                const heart = document.createElement('div');
-                heart.classList.add('heart-bg');
-                heart.innerHTML = '<i class="fas fa-heart"></i>';
-                
-                heart.style.left = `${Math.random() * 100}%`;
-                heart.style.top = `${Math.random() * 100}%`;
-                heart.style.fontSize = `${10 + Math.random() * 30}px`;
-                heart.style.opacity = 0.05 + Math.random() * 0.1;
-                
-                container.appendChild(heart);
-            }
-            
-            // Event listener untuk upload foto
-            document.getElementById('fileInput').addEventListener('change', function(e) {
-                const file = e.target.files[0];
-                
-                if (file) {
-                    // Validasi ukuran file (maksimal 5MB)
-                    if (file.size > 5 * 1024 * 1024) {
-                        alert('Ukuran foto terlalu besar. Maksimal 5MB.');
-                        return;
+            // Efek hover untuk planet
+            const planets = document.querySelectorAll('.planet');
+            planets.forEach(planet => {
+                planet.addEventListener('mouseenter', function() {
+                    const planetText = this.querySelector('i').className;
+                    let compliment = '';
+                    
+                    if (planetText.includes('fa-female')) {
+                        compliment = 'Kecantikanmu luar biasa!';
+                    } else if (planetText.includes('fa-eye')) {
+                        compliment = 'Matamu bagai bintang!';
+                    } else if (planetText.includes('fa-smile')) {
+                        compliment = 'Senyumanmu menghangatkan!';
+                    } else if (planetText.includes('fa-heart')) {
+                        compliment = 'Hatimu penuh kasih!';
                     }
                     
-                    // Validasi tipe file
-                    if (!file.type.match('image.*')) {
-                        alert('Hanya file gambar yang diizinkan.');
-                        return;
-                    }
+                    // Tampilkan tooltip
+                    const tooltip = document.createElement('div');
+                    tooltip.textContent = compliment;
+                    tooltip.style.cssText = `
+                        position: absolute;
+                        background: rgba(0, 0, 0, 0.8);
+                        color: white;
+                        padding: 8px 12px;
+                        border-radius: 10px;
+                        font-size: 0.8rem;
+                        white-space: nowrap;
+                        z-index: 1000;
+                        top: -40px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        border: 1px solid rgba(255, 107, 157, 0.5);
+                    `;
                     
-                    displayUploadedPhoto(file);
-                }
+                    this.appendChild(tooltip);
+                });
+                
+                planet.addEventListener('mouseleave', function() {
+                    const tooltip = this.querySelector('div');
+                    if (tooltip) {
+                        tooltip.remove();
+                    }
+                });
             });
             
-            // Animasi masuk untuk elemen konten
-            const contentElements = document.querySelectorAll('.message-box, .photo-frame, .memory-box');
-            contentElements.forEach((el, index) => {
+            // Animasi masuk elemen
+            const elements = document.querySelectorAll('.message-card, .photo-section, .surprise-section');
+            elements.forEach((el, index) => {
                 el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
+                el.style.transform = 'translateY(30px)';
                 
                 setTimeout(() => {
                     el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
                     el.style.opacity = '1';
                     el.style.transform = 'translateY(0)';
-                }, 300 + (index * 200));
+                }, 500 + (index * 200));
             });
-            
-            // Tambahkan contoh foto (untuk demo)
-            // Hapus kode berikut jika tidak ingin ada contoh foto
-            setTimeout(() => {
-                // Contoh: Tambahkan beberapa foto placeholder untuk demo
-                // Dalam implementasi nyata, ini akan diisi dengan foto yang diupload
-            }, 1000);
-        });
-        
-        // Fungsi drag & drop untuk upload foto
-        document.addEventListener('DOMContentLoaded', function() {
-            const photoPreview = document.getElementById('photoPreview');
-            
-            // Prevent default drag behaviors
-            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-                photoPreview.addEventListener(eventName, preventDefaults, false);
-            });
-            
-            function preventDefaults(e) {
-                e.preventDefault();
-                e.stopPropagation();
-            }
-            
-            // Highlight drop area when item is dragged over it
-            ['dragenter', 'dragover'].forEach(eventName => {
-                photoPreview.addEventListener(eventName, highlight, false);
-            });
-            
-            ['dragleave', 'drop'].forEach(eventName => {
-                photoPreview.addEventListener(eventName, unhighlight, false);
-            });
-            
-            function highlight(e) {
-                photoPreview.style.boxShadow = '0 0 20px rgba(255, 107, 157, 0.7)';
-                photoPreview.style.transform = 'scale(1.05)';
-            }
-            
-            function unhighlight(e) {
-                photoPreview.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.1)';
-                photoPreview.style.transform = 'scale(1)';
-            }
-            
-            // Handle dropped files
-            photoPreview.addEventListener('drop', handleDrop, false);
-            
-            function handleDrop(e) {
-                const dt = e.dataTransfer;
-                const files = dt.files;
-                
-                if (files.length > 0) {
-                    const file = files[0];
-                    
-                    // Validasi ukuran file (maksimal 5MB)
-                    if (file.size > 5 * 1024 * 1024) {
-                        alert('Ukuran foto terlalu besar. Maksimal 5MB.');
-                        return;
-                    }
-                    
-                    // Validasi tipe file
-                    if (!file.type.match('image.*')) {
-                        alert('Hanya file gambar yang diizinkan.');
-                        return;
-                    }
-                    
-                    displayUploadedPhoto(file);
-                }
-            }
         });
     </script>
 </body>
